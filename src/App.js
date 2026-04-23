@@ -14,7 +14,7 @@ import MyRequests from './pages/MyRequests';
 import { useNavigate } from 'react-router-dom';
 const App=()=>{
   // console.log(MOCK_BOOKS)
-  const [user, setUser] = useState({name:'sara',role:'Admin'}); // الحالة الابتدائية مفيش يوزر
+  const [user, setUser] = useState({name:'sara',role:'Reader'}); // الحالة الابتدائية مفيش يوزر
   const [requests, setRequests] = useState(() => {
     const saved = localStorage.getItem('requests');
     return saved ? JSON.parse(saved) : [];
