@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+.div1{
+  background-color: aqua;
+  color: black;
+}
+.div1 div{
+  background-color: gray;
+  width: 30%;
+}
+.style1{
+  display: block;
+  font-size: 30px;
+  width: 300px;
+  height: 40px;
+  color:red ;
+  border-radius: 18px;
+}
+.style2{
+   display: none;
+}
