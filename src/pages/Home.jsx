@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Home = () => {
+const Home = ({user}) => {
   const navigate = useNavigate();
 
   return (
@@ -21,12 +21,14 @@ const Home = () => {
           >
             Explore Library
           </button>
-          <button 
-             onClick={() => navigate('/signup')}
-             className="bg-transparent border border-slate-700 text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-slate-800 transition-all"
-          >
-            Join Now
-          </button>
+          {!user && (
+            <button 
+              onClick={() => navigate('/signup')}
+              className="bg-transparent border border-slate-700 text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-slate-800 transition-all"
+            >
+              Join Now
+            </button>
+          )}
         </div>
       </section>
 

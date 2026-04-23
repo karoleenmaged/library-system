@@ -11,10 +11,10 @@ import Profile from './pages/Profile';
 import Home from './pages/Home';
 import BrowseBooks from "./pages/BrowseBooks.jsx";
 import MyRequests from './pages/MyRequests';
-// import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const App=()=>{
   // console.log(MOCK_BOOKS)
-  const [user, setUser] = useState({name:'sara',role:'Reader'}); // الحالة الابتدائية مفيش يوزر
+  const [user, setUser] = useState({name:'sara',role:'Admin'}); // الحالة الابتدائية مفيش يوزر
   const [requests, setRequests] = useState(() => {
     const saved = localStorage.getItem('requests');
     return saved ? JSON.parse(saved) : [];
@@ -46,13 +46,15 @@ const cancelRequest = (bookId) => {
   // بنحدث الـ State
   setRequests(updatedRequests);
   
-  // ملحوظة: الـ useEffect اللي إنتِ عملتيه هيحدث الـ localStorage أوتوماتيكياً
+  //اللوكال استورج هتتحدث تلقائي
   alert("Request has been cancelled successfully.");
 };
+// const navigate=useNavigate();
 const handleLogout = (e) => {
-  if (e) e.preventDefault(); // ده السطر السحري اللي بيمنع الصفحة تحمل من جديد
+  if (e) e.preventDefault(); //بيمنع الصفحه تحمل من جديد
   setUser(null);
   localStorage.removeItem('user');
+  window.location.href = "/"; //بيروح للهوم
   // لو عايزة توديه للهوم بدون ريلود:
   // navigate("/"); 
 };
@@ -64,7 +66,7 @@ const handleLogout = (e) => {
 
         <Routes>
           {/* الصفحة الرئيسية */}
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home user={user} />} />
           
           {/* صفحة اللوجن */}
           <Route path="/login" element={<Login />} />
