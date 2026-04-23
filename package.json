@@ -2,7 +2,7 @@
   "name": "reacttest",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://karoleenmaged.github.io/your-repo-name",
+  "homepage": "https://karoleenmaged.github.io/library-system",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",

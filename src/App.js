@@ -1,5 +1,5 @@
 import {Component, React, useState,useEffect,createContext,useReducer, useCallback, useRef} from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
 import { jsx } from "react/jsx-runtime";
 import {MOCK_BOOKS} from "./mockData.js";
